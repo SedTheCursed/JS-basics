@@ -1,3 +1,4 @@
+//function asking a name and gretting it
 function hello() {
     let name = "";
     

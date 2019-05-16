@@ -12,9 +12,11 @@ class Library {
     }
 
     rentalComparison(string, less = false ) {
+        //use the first item as default
         let target = this.books[0];
         let rental = this.books[0].rented;
 
+        //Run through the array and change the values when the condition is true.
         books.forEach(book => {
             const condition = (less) ? 
                                 book.rented < rental : 

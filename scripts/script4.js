@@ -3,6 +3,7 @@ class Entrepreneurs {
         this.people = array;
     }
 
+    //Search the people born in the 197* and returning a formatted texte about it
     bornInThe70() {
         content = this.title("Entrepreneurs né dans les 70's&nbsp;") +
             this.people
@@ -13,6 +14,7 @@ class Entrepreneurs {
         return content + "</p>"
     }
     
+    //standard function formatting a text
     mapping(string, callback) {
         content = this.title(string) + 
                     this.people

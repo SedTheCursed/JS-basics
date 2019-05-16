@@ -1,3 +1,4 @@
+//Class calling every script and rendering their result on the HTML terminal
 class App {
 
     hello () {

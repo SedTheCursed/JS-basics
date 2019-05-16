@@ -1,3 +1,4 @@
+//Function creating a ascending pyramid, of a given number of floors, reducing the space before and incresing the number of bricks for each floor.
 function pyramid() {
     let floors = 0;
     let pyramid = "<table>"

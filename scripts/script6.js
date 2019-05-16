@@ -4,6 +4,7 @@ class Genome {
         this.proteins = this.ARNtoProteins();
     }
 
+    //change the ARN in a suite of sequence of 3 letters
     sequencedARN(arn) {
         let sequence = ""
 
@@ -15,10 +16,12 @@ class Genome {
         return sequence
     }
 
+    //create group of 3 letters
     subSequence(arn, brick) {
         return arn.substr(brick*3, 3)
     }
 
+    //Create a string of proteins, based on the sequenced ARN
     ARNtoProteins() {
         return this.sequence
             .split("-")
