@@ -3,5 +3,5 @@ function hello() {
     
     while (!name) { name = prompt("Quel est ton nom ?").trim() }
 
-    console.log(`Bonjour ${name}`);
+    return `<p>> Bonjour ${name}&nbsp;!</p>`;
 }

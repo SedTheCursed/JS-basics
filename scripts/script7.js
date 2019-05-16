@@ -14,9 +14,6 @@ class AdoBot {
     }
     
     chat() {
-        do {
-            var msg = prompt("Kes-tu m'veux encore ?")
-            console.log(this.react(msg))  
-        } while (msg)
+        return `<p>> ${this.react(prompt("Kes-tu m'veux encore ?"))}</p>`;
     }
 }

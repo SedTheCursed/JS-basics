@@ -58,4 +58,8 @@ class Genome {
             })
             .join("-")
     }
+
+    presentation() {
+        return `<p>> Le génome ${this.sequence} correspond à la chaine de protéines suivante&nbsp;: ${this.proteins}</p>`
+    }
 }

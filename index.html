@@ -3,7 +3,31 @@
     <head>
         <meta charset="utf-8" />
         <title>Les bases de JavaScript</title>
+        <link rel="stylesheet" href="styles/style.css" />
     </head>
+        <h1>Bienvenue sur le site des basiques du Javascript.</h1>
+        <div class="card">
+            <h2>Que voulez-faire&nbsp;?</h2>
+            <form action="#">
+                <input type="radio" name="animation" id="hello" value="hello" onClick="app.hello()"/>
+                <label for="hello">Dire bonjour.</label><br/><hr/>
+                <input type="radio" name="animation" id="factorial" value="factorial" onClick="app.factorial()"/>
+                <label for="factorial">Calculer une factorielle</label><br/><hr/>
+                <input type="radio" name="animation" id="pyramid" value="pyramid" onClick="app.pyramid()"/>
+                <label for="pyramid">Créer une pyramide.</label><br/><hr/>
+                <input type="radio" name="animation" id="entrepreneurs" value="entrepreneurs" onClick="app.entrepreneurs()"/>
+                <label for="entrepreneurs">Consulter une base de données d'entrepreneurs américains</label><br/><hr/>
+                <input type="radio" name="animation" id="library" value="library" onClick="app.library()"/>
+                <label for="library">Consulter le catalogue d'une bibilothèque.</label><br/><hr/>
+                <input type="radio" name="animation" id="genome" value="genome" onClick="app.genome()"/>
+                <label for="genome">Décoder de l'ARN</label><br/><hr/>
+                <input type="radio" name="animation" id="adoBot" value="adoBot" onClick="app.adoBot()"/>
+                <label for="adoBot">Discuter avec un bot en pleine crise d'adolescence.</label>
+            </form>
+        </div>
+        <div class="card terminal">
+            >
+        </div>
     <body>
         <script src="scripts/data.js"></script>
         <script src="scripts/script1.js"></script>

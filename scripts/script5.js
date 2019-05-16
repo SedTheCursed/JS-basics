@@ -8,7 +8,7 @@ class Library {
             "n'ont pas" :
             "ont";
 
-        return `Tous les livres ${verb} été emprunté au moins une fois.`;
+        return `<p>> Tous les livres ${verb} été emprunté au moins une fois.</p>`;
     }
 
     rentalComparison(string, less = false ) {
@@ -25,7 +25,7 @@ class Library {
             }
         });
 
-        return `${target.title} (${target.id}) ${string} avec ${target.rented} emprunts`;
+        return `<p>> ${target.title} (${target.id}) ${string} avec ${target.rented} emprunts</p>`;
     }
 
     moreRented() {
@@ -41,8 +41,8 @@ class Library {
     }
 
     showFoundBook(id) {
-        return `Le livre ayant l'ID ${id} est ` +
-            this.findBook(id).title;
+        return `<p>> Le livre ayant l'ID ${id} est ` +
+            this.findBook(id).title + "</p>";
     }
 
     removeBook(id) {
@@ -51,14 +51,14 @@ class Library {
         if (bookToRemove) {
             this.books.splice(this.books.indexOf(bookToRemove),1);
 
-            return `${bookToRemove.title} (ID : ${id}) a bien été retiré de la base de données`;
+            return `<p>> ${bookToRemove.title} (ID : ${id}) a bien été retiré de la base de données</p>`;
         } else {
-            return `La bibliothèque ne possède pas de livre avec l'ID ${id}`;
+            return `<p>> La bibliothèque ne possède pas de livre avec l'ID ${id}</p>`;
         }   
     }
 
     sortedBooks() {
-        return "\nVoici les livres de la bibliothèque :\n" +
+        return "<p>> Voici les livres de la bibliothèque :<br/>" +
             this.books.sort((a, b) => {
                 if (a.title > b.title) {
                     return 1;
@@ -68,16 +68,16 @@ class Library {
                     return 0;
                 }
             })
-            .map(book => `\t${book.title}\n`)
+            .map(book => `<span class="tab">${book.title}</span><br/>`)
             .join("")
     }
 
     perform() {
-        console.log(this.allRentedOnce());
-        console.log(this.moreRented());
-        console.log(this.lessRented());     
-        console.log(this.showFoundBook(873495));
-        console.log(this.removeBook(133712));
-        console.log(this.sortedBooks())
+        return this.allRentedOnce() +
+        this.moreRented() +
+        this.lessRented() +     
+        this.showFoundBook(873495)+
+        this.removeBook(133712)+
+        this.sortedBooks()
     }
 }

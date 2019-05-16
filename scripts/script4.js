@@ -4,46 +4,60 @@ class Entrepreneurs {
     }
 
     bornInThe70() {
-        return "Entrepreneurs né dans les 70's:\n" +
+        content = this.title("Entrepreneurs né dans les 70's&nbsp;") +
             this.people
                 .filter(person => /^197\d$/.test(String(person.year)))
-                .map(person => `\t${person.first} ${person.last}, année de naissance : ${person.year}\n`)
+                .map(person => this.line(`${person.first} ${person.last}, année de naissance : ${person.year}`))
                 .join("")
+
+        return content + "</p>"
     }
     
     mapping(string, callback) {
-        return `\n${string}\n` + 
-                this.people
+        content = this.title(string) + 
+                    this.people
                     .map(callback)
                     .join("");
+
+        return content + "</p>"
     }
     
     identity() {
         return this.mapping(
-                "Entrepreneurs américains :",
-                person => `\t${person.first} ${person.last}\n`
+                "Entrepreneurs américains&nbsp;:",
+                person => this.line(`${person.first} ${person.last}`)
             );
     }
     
     ageIn2019() {
         return this.mapping(
-                "Age en 2019 :",
-                person => `\t${person.first} ${person.last} : ${2019 - person.year}\n`
+                "Age en 2019&nbsp;:",
+                person => this.line(`${person.first} ${person.last}&nbsp;: ${2019 - person.year}`)
             );
     }
     
     alphabeticalIdentity() {
-        return "\nEntrepreneurs par ordre alphabétique : \n" +
+        content = this.title("Entrepreneurs par ordre alphabétique&nbsp;:") +
             this.people
                 .sort((a, b) => (a.last > b.last) ? 1 : -1)
-                .map((person) => `\t${person.last.toUpperCase()}, ${person.first}\n`)
+                .map((person) => this.line(`${person.last.toUpperCase()}, ${person.first}`))
                 .join("")
+
+        return content + "</p>"
+    }
+
+    title(text) {
+        return `<p>> ${text}</br>`
+    }
+
+    line(text) {
+        return `<span class="tab">${text}</span></br>`
     }
     
     perform() {
-        console.log(this.bornInThe70());
-        console.log(this.identity());
-        console.log(this.ageIn2019());
-        console.log(this.alphabeticalIdentity());
+        return this.bornInThe70() +
+                this.identity() +
+                this.ageIn2019() +
+                this.alphabeticalIdentity();
     }
 }

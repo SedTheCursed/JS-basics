@@ -6,5 +6,5 @@ function factorielle() {
     
     for(let i = 1; i<=number; i++) {factorial *= i}
 
-    console.log(`Le résultat est : ${factorial}`);
+    return `<p>>La factorielle de ${number} est ${factorial}</p>`;
 }
