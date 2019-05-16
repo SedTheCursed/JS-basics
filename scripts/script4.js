@@ -1,11 +1,11 @@
 class Entrepreneurs {
     constructor(array) {
-        this.array = array;
+        this.people = array;
     }
 
     bornInThe70() {
         return "Entrepreneurs né dans les 70's:\n" +
-            this.array
+            this.people
                 .filter(person => /^197\d$/.test(String(person.year)))
                 .map(person => `\t${person.first} ${person.last}, année de naissance : ${person.year}\n`)
                 .join("")
@@ -13,7 +13,7 @@ class Entrepreneurs {
     
     mapping(string, callback) {
         return `\n${string}\n` + 
-                this.array
+                this.people
                     .map(callback)
                     .join("");
     }
@@ -34,7 +34,7 @@ class Entrepreneurs {
     
     alphabeticalIdentity() {
         return "\nEntrepreneurs par ordre alphabétique : \n" +
-            this.array
+            this.people
                 .sort((a, b) => (a.last > b.last) ? 1 : -1)
                 .map((person) => `\t${person.last.toUpperCase()}, ${person.first}\n`)
                 .join("")
