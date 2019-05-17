@@ -5,7 +5,7 @@ class Entrepreneurs {
 
     //Search the people born in the 197* and returning a formatted texte about it
     bornInThe70() {
-        content = this.title("Entrepreneurs né dans les 70's&nbsp;") +
+        let content = this.title("Entrepreneurs né dans les 70's&nbsp;") +
             this.people
                 .filter(person => /^197\d$/.test(String(person.year)))
                 .map(person => this.line(`${person.first} ${person.last}, année de naissance : ${person.year}`))
@@ -16,7 +16,7 @@ class Entrepreneurs {
     
     //standard function formatting a text
     mapping(string, callback) {
-        content = this.title(string) + 
+        let content = this.title(string) + 
                     this.people
                     .map(callback)
                     .join("");
@@ -39,7 +39,7 @@ class Entrepreneurs {
     }
     
     alphabeticalIdentity() {
-        content = this.title("Entrepreneurs par ordre alphabétique&nbsp;:") +
+        let content = this.title("Entrepreneurs par ordre alphabétique&nbsp;:") +
             this.people
                 .sort((a, b) => (a.last > b.last) ? 1 : -1)
                 .map((person) => this.line(`${person.last.toUpperCase()}, ${person.first}`))

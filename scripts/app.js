@@ -24,10 +24,8 @@ class App {
     genome() {
         //"CCGUCGUUGCGCUACAGC" => "Proline-Sérine-Leucine-Arginine-Tyrosine-Sérine"
         //"CCUCGCCGGUACUUCUCG" => "Proline-Arginine-Arginine-Tyrosine-Phénylalanine-Sérine"
-        this.render(
-            new Genome("CCGUCGUUGCGCUACAGC").presentation() +
-            new Genome("CCUCGCCGGUACUUCUCG").presentation()
-        );
+        const arn = prompt("Quel ARN voulez-vous séquencer ?")
+        this.render(new Genome(arn).presentation());
     }
 
     adoBot() {
