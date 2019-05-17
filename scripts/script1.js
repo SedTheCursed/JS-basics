@@ -4,5 +4,5 @@ function hello() {
     
     while (!name) { name = prompt("Quel est ton nom ?").trim() }
 
-    return `<p>> Bonjour ${name}&nbsp;!</p>`;
+    return `<p>> Hello Monde</p><p>> Bonjour ${name}&nbsp;!</p>`;
 }
